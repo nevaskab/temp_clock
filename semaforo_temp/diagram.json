@@ -1,0 +1,64 @@
+{
+    "version": 1,
+    "author": "Andressa Martins",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "board-pi-pico-w", "id": "pico", "top": -60.85, "left": 51.55, "attrs": {} },
+      {
+        "type": "wokwi-led",
+        "id": "led1",
+        "top": 63.6,
+        "left": -140.2,
+        "attrs": { "color": "red" }
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led2",
+        "top": 102,
+        "left": -140.2,
+        "attrs": { "color": "yellow" }
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led3",
+        "top": 140.4,
+        "left": -140.2,
+        "attrs": { "color": "limegreen" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r1",
+        "top": 99.95,
+        "left": -67.2,
+        "attrs": { "value": "330" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r2",
+        "top": 138.35,
+        "left": -67.2,
+        "attrs": { "value": "330" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r3",
+        "top": 176.75,
+        "left": -67.2,
+        "attrs": { "value": "330" }
+      }
+    ],
+    "connections": [
+      [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+      [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+      [ "r3:2", "pico:GP13", "green", [ "h27.6", "v-76.84" ] ],
+      [ "led3:A", "r3:1", "green", [ "v0" ] ],
+      [ "r2:2", "pico:GP12", "green", [ "h8.4", "v-48.04" ] ],
+      [ "r1:2", "pico:GP11", "green", [ "v0" ] ],
+      [ "led2:A", "r2:1", "green", [ "v0" ] ],
+      [ "led1:A", "r1:1", "green", [ "v0" ] ],
+      [ "led1:C", "pico:GND.2", "green", [ "h-57.2", "v-86.4", "h240" ] ],
+      [ "led2:C", "pico:GND.2", "green", [ "h-57.2", "v-124.8", "h240" ] ],
+      [ "led3:C", "pico:GND.2", "green", [ "h-57.2", "v-163.2", "h240" ] ]
+    ],
+    "dependencies": {}
+  }
